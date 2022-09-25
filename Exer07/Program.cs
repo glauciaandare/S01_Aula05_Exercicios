@@ -11,19 +11,26 @@ namespace Exer07 {
             {
                 Console.WriteLine("Informe um número Inteiro: ");
                 int numero = Convert.ToInt32(Console.ReadLine());
-
-                while (numero < 0)
+                while (numero != 0)
                 {
+                    Console.WriteLine("Informe um número Inteiro: ");
+                }           
 
-                    
-                }
+
             }
-            
-            
-
-            catch 
+            catch (FormatException erro)
             {
                 Console.WriteLine("O número dever ser inteiro");
+                Console.WriteLine(erro.Message);
+            }
+            catch (DivideByZeroException erro)
+            {
+                Console.WriteLine("Divisão por zero");
+                Console.WriteLine(erro.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Fim");
             }
         }
     }
